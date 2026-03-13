@@ -9,11 +9,37 @@
 </head>
 <body>
   <h1>Hello PedsWA!</h1>
-  <p>This is a simple installable PWA for iOS.</p>
+
+  <div id="tape-display">
+
+    <label>Age: 
+      <input type="range" id="age" min="0" max="16" value="7" step="1" 
+             style="width:300px;" oninput="syncSliders('age')">
+      <span id="age-value">12 months</span>
+    </label><br>
+
+    <label>Length: 
+      <input type="range" id="length" min="46" max="145" value="80" step="1" 
+             style="width:300px;" oninput="syncSliders('length')">
+      <span id="length-value">80 cm</span>
+    </label><br>
+
+    <label>Weight: 
+      <input type="range" id="weight" min="3" max="40" value="10" step="1" 
+             style="width:300px;" oninput="syncSliders('weight')">
+      <span id="weight-value">10 kg</span>
+    </label><br>
+
+  </div>
+
+  <div id="output"></div>
+
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js');
     }
   </script>
+  <script src="peds.js" defer></script>
 </body>
 </html>
+
