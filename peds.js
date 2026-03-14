@@ -83,3 +83,23 @@ fetch('peds.json')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error reading JSON:', error));
+
+// Append Table
+function addRow(data) {
+    const tbody = document.querySelector("#dataTable");
+    const row = document.createElement("tr");
+    const cell1 = document.createElement("td");
+    const cell2 = document.createElement("td");
+    const cell3 = document.createElement("td");
+
+    cell1.textContent = "Value 1";
+    cell2.textContent = "Value 2";
+    cell3.textContent = "Value 3";
+
+    for each i 
+
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+    row.appendChild(cell3);
+    tbody.appendChild(row);
+}
