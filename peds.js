@@ -77,3 +77,9 @@ function updateTapeDisplay(color, font) {
 document.addEventListener('DOMContentLoaded', () => {
   syncSliders(broselow.find(z => 75 >= z.lengthMin));
 });
+
+// Load Data
+fetch('peds.json')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error reading JSON:', error));
