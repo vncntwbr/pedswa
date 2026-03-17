@@ -109,17 +109,14 @@ function addRows(dataMeds, weight) {
 
     let cellContents = [];
     cellContents += currentMed.indication;
+    cellContents += currentMed.med;
+    cellContents += currentMed.dose_kg + " " + currentMed.unit + "/kg";
+    cellContents += calcDose;
 
     // Iterating over single medication object and adding a cell for each key-value pair
-    for (let j = 0; j < Object.keys(currentMed).length; j++) {
+    for (let j = 0; j < cellContents.length; j++) {
       const cell = document.createElement('td');
-      const key = Object.keys(currentMed)[j];
-      const value = Object.values(currentMed)[j];
-      
-      //if (key == )
-      cell.textContent = value;
-      
-
+      cell.textContent = cellContents[j];
       console.log(cell);
       row.appendChild(cell);
     }
