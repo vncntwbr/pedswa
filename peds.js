@@ -91,26 +91,26 @@ document.addEventListener('DOMContentLoaded', () => {
 // Append Table
 
 function calculate(data){
-  console.log('addRow called with data:', data);
-  addRow(data);
+  console.log('addRow called with data:', data.medications);
+  addRows(data.medications);
   for (const [key, value] of Object.entries(data)) {
     console.log(`${key}: ${value}`);
     //addRow(key, value);
   }
 }
 
-function addRow(data) {
+function addRow(dataSubset) {
   const tbody = document.querySelector("#dataTableBody");
   const row = document.createElement("tr");
   //const cells = []
 
-  for (let i = 1; i <= data.medications.length; i++) {
-    const med = data.medications[i];
-    console.log('At medications ' + med);
+  for (let i = 1; i <= dataSubset.length; i++) {
+    const currentMed = dataSubset[i];
+    console.log('At medications ' + currentMed);
 
-    for (let i = 1; i <= 6; i++) {
+    for (let j = 1; j <= 6; j++) {
       const cell = document.createElement('td');
-      cell.textContent = `Cell ${i}` + Object.values(data.medications)[i];
+      cell.textContent = `Cell ${j}` + Object.values(currentMed)[j];
       //cells.push(cell);
       console.log(cell)
       row.appendChild(cell)
