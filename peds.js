@@ -1,3 +1,9 @@
+// Load Data
+fetch('peds.json')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error reading JSON:', error));
+
 const broselow = [
   {color:'#008000', zone:'Green', weightMin:30, ageMin:120, ageSlider:15, lengthMin:131, font:'#FFF'},
   {color:'#FFA500', zone:'Orange', weightMin:24, ageMin:108, ageSlider:14, lengthMin:122, font:'#000'},
@@ -65,7 +71,7 @@ function syncSliders(changed) {
   }
 
   updateTapeDisplay(zone.color, zone.font);
-  //calculate(); // Auto-update doses
+  calculate(data); // Auto-update doses
 }
 
 function updateTapeDisplay(color, font) {
@@ -78,13 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
   syncSliders(broselow.find(z => 75 >= z.lengthMin));
 });
 
-// Load Data
-fetch('peds.json')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error reading JSON:', error));
-
 // Append Table
+
+function calculate(data){
+  for (const [key, value] of Object.entries(data)) {
+  console.log(`${key}: ${value}`);
+}
+}
+
 function addRow(data) {
     const tbody = document.querySelector("#dataTable");
     const row = document.createElement("tr");
@@ -96,7 +103,7 @@ function addRow(data) {
     cell2.textContent = "Value 2";
     cell3.textContent = "Value 3";
 
-    for each i 
+    //for each i 
 
     row.appendChild(cell1);
     row.appendChild(cell2);
