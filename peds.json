@@ -1,7 +1,7 @@
 {
 	"medications": [
 		{
-			"indiciation": "Anaphylaxis",
+			"indication": "Anaphylaxis",
 			"med": "Adrenaline i.m.",
 			"dose_kg": 0.01,
 			"unit": "mg",
@@ -11,7 +11,7 @@
 			"font": "#000"
 		},
 		{
-			"indiciation": "Seizure",
+			"indication": "Seizure",
 			"med": "Midazolam i.m.",
 			"dose_kg": 0.2,
 			"unit": "mg",
