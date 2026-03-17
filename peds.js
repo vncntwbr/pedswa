@@ -75,7 +75,7 @@ function syncSliders(changed) {
   }
 
   updateTapeDisplay(zone.color, zone.font);
-  calculate(data); // Auto-update doses
+  calculate(data, newWeight); // Auto-update doses
 }
 
 function updateTapeDisplay(color, font) {
@@ -89,12 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Append Table
-function calculate(data2){
+function calculate(data2, weight){
   console.log('addRows called with data:', data2.medications);
-  addRows(data2.medications);
+  addRows(data2.medications, weight);
 }
 
-function addRows(dataMeds) {
+function addRows(dataMeds, weight) {
   const tbodyMeds = document.querySelector("#medicationsTableBody");
   tbody.innerHTML = "";
 
@@ -105,13 +105,16 @@ function addRows(dataMeds) {
 
     const row = document.createElement("tr");
 
+    const calcDose = currentMed.dose_kg * weight + " " + currentMed.unit;
+    console.log(calcDose);
+
     // Iterating over single medication object and adding a cell for each key-value pair
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < Object.keys(currentMed).length; j++) {
       const cell = document.createElement('td');
       const key = Object.keys(currentMed)[j];
       const value = Object.values(currentMed)[j];
       
-      if (key == )
+      //if (key == )
       cell.textContent = value;
       
 
