@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Append Table
 
 function calculate(data){
-  console.log(data);
+  console.log('addRow called with data:', data);
   addRow(data);
   for (const [key, value] of Object.entries(data)) {
     console.log(`${key}: ${value}`);
@@ -102,7 +102,7 @@ function addRow(data) {
 
   for (let i = 1; i <= data.medications.length; i++) {
     const med = data.medications[i];
-    console.log(med);
+    console.log('At medications ' + med);
 
     for (let i = 1; i <= 6; i++) {
       const cell = document.createElement('td');
