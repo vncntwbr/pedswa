@@ -104,7 +104,7 @@ function addRows(dataMeds, weight, zone) {
 
     const row = document.createElement("tr");
 
-    const calcDose = currentMed.dose_kg * weight + " " + currentMed.unit;
+    const calcDose = Math.round((currentMed.dose_kg * weight) * 100) / 100 + " " + currentMed.unit;
     console.log(calcDose);
 
     let cellContents = [];
