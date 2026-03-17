@@ -1,5 +1,5 @@
 // Load Data
-fetch('peds.json')
+const data = fetch('peds.json')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error reading JSON:', error));
@@ -87,17 +87,37 @@ document.addEventListener('DOMContentLoaded', () => {
 // Append Table
 
 function calculate(data){
+  addRow(data);
   for (const [key, value] of Object.entries(data)) {
-  console.log(`${key}: ${value}`);
-}
+    console.log(`${key}: ${value}`);
+    //addRow(key, value);
+  }
 }
 
 function addRow(data) {
-    const tbody = document.querySelector("#dataTable");
-    const row = document.createElement("tr");
-    const cell1 = document.createElement("td");
-    const cell2 = document.createElement("td");
-    const cell3 = document.createElement("td");
+  const tbody = document.querySelector("#dataTable");
+  const row = document.createElement("tr");
+  const cells = []
+
+  for (let i = 1; i <= 6; i++) {
+    const cell = document.createElement('td');
+    cell.textContent = `Cell ${i}` + Object.values(obj)[i];
+    cells.push(cell);
+    row.appendChild(cell[i])
+  }
+/*
+
+  const cell1 = document.createElement("td");
+  const cell2 = document.createElement("td");
+  const cell3 = document.createElement("td");
+  const cell4 = document.createElement("td");
+  const cell5 = document.createElement("td");
+  const cell6 = document.createElement("td");
+
+  for (const [key, value] of Object.entries(data)) {
+      console.log(`${key}: ${value}`);
+      //addRow(key, value);
+  }
 
     cell1.textContent = "Value 1";
     cell2.textContent = "Value 2";
@@ -109,4 +129,5 @@ function addRow(data) {
     row.appendChild(cell2);
     row.appendChild(cell3);
     tbody.appendChild(row);
+    */
 }
