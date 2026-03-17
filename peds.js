@@ -112,6 +112,7 @@ function addRows(dataMeds, weight) {
     cellContents += currentMed.med;
     cellContents += currentMed.dose_kg + " " + currentMed.unit + "/kg";
     cellContents += calcDose;
+    console.log(cellContents);
 
     // Iterating over single medication object and adding a cell for each key-value pair
     for (let j = 0; j < cellContents.length; j++) {
