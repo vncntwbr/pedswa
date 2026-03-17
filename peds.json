@@ -1,18 +1,22 @@
 {
-	"indiciation": "Anaphylaxis",
-	"med": "Adrenaline i.m.",
-	"dose_kg": 0.01,
-	"unit": "mg",
-	"dilution": "undiluted",
-	"concentration": "1 mg/ml",
-	"color": "#debfd9"
-},
-{
-	"indiciation": "Seizure",
-	"med": "Midazolam i.m.",
-	"dose_kg": 0.2,
-	"unit": "mg",
-	"dilution": "undiluted",
-	"concentration": "",
-	"color": "#ff6600"
+	"medications": [
+		{
+			"indiciation": "Anaphylaxis",
+			"med": "Adrenaline i.m.",
+			"dose_kg": 0.01,
+			"unit": "mg",
+			"dilution": "undiluted",
+			"concentration": "1 mg/ml",
+			"color": "#debfd9"
+		},
+		{
+			"indiciation": "Seizure",
+			"med": "Midazolam i.m.",
+			"dose_kg": 0.2,
+			"unit": "mg",
+			"dilution": "undiluted",
+			"concentration": "",
+			"color": "#ff6600"
+		}
+	]
 }
