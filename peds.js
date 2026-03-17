@@ -112,6 +112,7 @@ function addRows(dataSubset) {
       row.appendChild(cell);
     }
     row.style.backgroundColor = currentMed.color;
+    row.style.color = currentMed.font;
     tbody.appendChild(row);
   }
 }
