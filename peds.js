@@ -97,13 +97,14 @@ function calculate(data){
 function addRow(data) {
   const tbody = document.querySelector("#dataTable");
   const row = document.createElement("tr");
-  const cells = []
+  //const cells = []
 
   for (let i = 1; i <= 6; i++) {
     const cell = document.createElement('td');
-    cell.textContent = `Cell ${i}` + Object.values(obj)[i];
-    cells.push(cell);
-    row.appendChild(cell[i])
+    cell.textContent = `Cell ${i}` + Object.values(data)[i];
+    //cells.push(cell);
+    console.log(cell)
+    row.appendChild(cell)
   }
 /*
 
