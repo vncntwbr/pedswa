@@ -89,15 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Append Table
-
 function calculate(data2){
-  console.log('addRows called with data:', data2.medications);
-  addRows(data2.medications);
+  console.log('addMedications called with data:', data2.medications);
+  addMedications(data2.medications);
 }
 
-function addRows(dataSubset) {
+function addMedications(dataSubset) {
   const tbody = document.querySelector("#medicationsTableBody");
-  console.log(tbody);
+  tbody.innerHTML = "";
 
   for (let i = 0; i < dataSubset.length; i++) {
     const currentMed = dataSubset[i];
