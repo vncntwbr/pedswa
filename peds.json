@@ -7,7 +7,8 @@
 			"unit": "mg",
 			"dilution": "undiluted",
 			"concentration": "1 mg/ml",
-			"color": "#debfd9"
+			"color": "#debfd9",
+			"font": "#000"
 		},
 		{
 			"indiciation": "Seizure",
@@ -16,7 +17,8 @@
 			"unit": "mg",
 			"dilution": "undiluted",
 			"concentration": "",
-			"color": "#ff6600"
+			"color": "#ff6600",
+			"font": "#fff"
 		}
 	],
 	"equipment": [],

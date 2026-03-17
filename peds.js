@@ -111,6 +111,7 @@ function addRows(dataSubset) {
       console.log(cell);
       row.appendChild(cell);
     }
+    row.style.backgroundColor = currentMed.color;
     tbody.appendChild(row);
   }
 }
