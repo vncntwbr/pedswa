@@ -90,13 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Append Table
 
-function calculate(data){
-  console.log('addRows called with data:', data.medications);
-  addRows(data.medications);
-  for (const [key, value] of Object.entries(data)) {
-    console.log(`${key}: ${value}`);
-    //addRow(key, value);
-  }
+function calculate(data2){
+  console.log('addRows called with data:', data2.medications);
+  addRows(data2.medications);
 }
 
 function addRows(dataSubset) {
