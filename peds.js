@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Append Table
 
 function calculate(data){
-  console.log('addRow called with data:', data.medications);
+  console.log('addRows called with data:', data.medications);
   addRows(data.medications);
   for (const [key, value] of Object.entries(data)) {
     console.log(`${key}: ${value}`);
@@ -101,22 +101,23 @@ function calculate(data){
 
 function addRows(dataSubset) {
   const tbody = document.querySelector("#dataTableBody");
-  const row = document.createElement("tr");
   //const cells = []
 
-  for (let i = 1; i <= dataSubset.length; i++) {
+  for (let i = 0; i < dataSubset.length; i++) {
     const currentMed = dataSubset[i];
     console.log('At medications ' + currentMed);
 
-    for (let j = 1; j <= 6; j++) {
+    const row = document.createElement("tr");
+
+    for (let j = 0; j < 5; j++) {
       const cell = document.createElement('td');
       cell.textContent = `Cell ${j}` + Object.values(currentMed)[j];
       //cells.push(cell);
       console.log(cell)
       row.appendChild(cell)
     }
+    tbody.appendChild(row);
   }
-  tbody.appendChild(row);
   
 /*
 
