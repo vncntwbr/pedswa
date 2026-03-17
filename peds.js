@@ -1,7 +1,11 @@
 // Load Data
-const data = fetch('peds.json')
+let data;
+fetch('peds.json')
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data1 => {
+    data = data1;
+    console.log(data);
+  })
   .catch(error => console.error('Error reading JSON:', error));
 
 const broselow = [
