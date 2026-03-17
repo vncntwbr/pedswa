@@ -96,17 +96,19 @@ function calculate(data2, weight){
 
 function addRows(dataMeds, weight) {
   const tbodyMeds = document.querySelector("#medicationsTableBody");
-  tbody.innerHTML = "";
+  tbodyMeds.innerHTML = "";
 
   // Looping over the array of all medications
   for (let i = 0; i < dataMeds.length; i++) {
     const currentMed = dataMeds[i];
-    console.log('At medications ' + currentMed);
 
     const row = document.createElement("tr");
 
     const calcDose = currentMed.dose_kg * weight + " " + currentMed.unit;
     console.log(calcDose);
+
+    let cellContents = [];
+    cellContents += currentMed.indication;
 
     // Iterating over single medication object and adding a cell for each key-value pair
     for (let j = 0; j < Object.keys(currentMed).length; j++) {
