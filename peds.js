@@ -100,8 +100,8 @@ function calculate(data){
 }
 
 function addRows(dataSubset) {
-  const tbody = document.querySelector("#dataTableBody");
-  //const cells = []
+  const tbody = document.querySelector("#medicationsTableBody");
+  console.log(tbody);
 
   for (let i = 0; i < dataSubset.length; i++) {
     const currentMed = dataSubset[i];
@@ -112,36 +112,9 @@ function addRows(dataSubset) {
     for (let j = 0; j < 5; j++) {
       const cell = document.createElement('td');
       cell.textContent = `Cell ${j}` + Object.values(currentMed)[j];
-      //cells.push(cell);
-      console.log(cell)
-      row.appendChild(cell)
+      console.log(cell);
+      row.appendChild(cell);
     }
     tbody.appendChild(row);
   }
-  
-/*
-
-  const cell1 = document.createElement("td");
-  const cell2 = document.createElement("td");
-  const cell3 = document.createElement("td");
-  const cell4 = document.createElement("td");
-  const cell5 = document.createElement("td");
-  const cell6 = document.createElement("td");
-
-  for (const [key, value] of Object.entries(data)) {
-      console.log(`${key}: ${value}`);
-      //addRow(key, value);
-  }
-
-    cell1.textContent = "Value 1";
-    cell2.textContent = "Value 2";
-    cell3.textContent = "Value 3";
-
-    //for each i 
-
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-    row.appendChild(cell3);
-    tbody.appendChild(row);
-    */
 }
