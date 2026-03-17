@@ -18,5 +18,8 @@
 			"concentration": "",
 			"color": "#ff6600"
 		}
-	]
+	],
+	"equipment": [],
+	"cpr": [],
+	"vitals": [],
 }

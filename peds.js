@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Append Table
 
 function calculate(data){
+  console.log(data);
   addRow(data);
   for (const [key, value] of Object.entries(data)) {
     console.log(`${key}: ${value}`);
@@ -95,17 +96,24 @@ function calculate(data){
 }
 
 function addRow(data) {
-  const tbody = document.querySelector("#dataTable");
+  const tbody = document.querySelector("#dataTableBody");
   const row = document.createElement("tr");
   //const cells = []
 
-  for (let i = 1; i <= 6; i++) {
-    const cell = document.createElement('td');
-    cell.textContent = `Cell ${i}` + Object.values(data)[i];
-    //cells.push(cell);
-    console.log(cell)
-    row.appendChild(cell)
+  for (let i = 1; i <= data.medications.length; i++) {
+    const med = data.medications[i];
+    console.log(med);
+
+    for (let i = 1; i <= 6; i++) {
+      const cell = document.createElement('td');
+      cell.textContent = `Cell ${i}` + Object.values(data.medications)[i];
+      //cells.push(cell);
+      console.log(cell)
+      row.appendChild(cell)
+    }
   }
+  tbody.appendChild(row);
+  
 /*
 
   const cell1 = document.createElement("td");
