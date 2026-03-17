@@ -107,7 +107,7 @@ function addRows(dataSubset) {
 
     for (let j = 0; j < 5; j++) {
       const cell = document.createElement('td');
-      cell.textContent = `Cell ${j}` + Object.values(currentMed)[j];
+      cell.textContent = Object.values(currentMed)[j];
       console.log(cell);
       row.appendChild(cell);
     }
