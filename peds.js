@@ -99,7 +99,7 @@ function calculate(data){
   }
 }
 
-function addRow(dataSubset) {
+function addRows(dataSubset) {
   const tbody = document.querySelector("#dataTableBody");
   const row = document.createElement("tr");
   //const cells = []
