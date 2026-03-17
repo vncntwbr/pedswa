@@ -90,28 +90,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Append Table
 function calculate(data2){
-  console.log('addMedications called with data:', data2.medications);
-  addMedications(data2.medications);
+  console.log('addRows called with data:', data2.medications);
+  addRows(data2.medications);
 }
 
-function addMedications(dataSubset) {
-  const tbody = document.querySelector("#medicationsTableBody");
+function addRows(dataMeds) {
+  const tbodyMeds = document.querySelector("#medicationsTableBody");
   tbody.innerHTML = "";
 
-  for (let i = 0; i < dataSubset.length; i++) {
-    const currentMed = dataSubset[i];
+  // Looping over the array of all medications
+  for (let i = 0; i < dataMeds.length; i++) {
+    const currentMed = dataMeds[i];
     console.log('At medications ' + currentMed);
 
     const row = document.createElement("tr");
 
+    // Iterating over single medication object and adding a cell for each key-value pair
     for (let j = 0; j < 5; j++) {
       const cell = document.createElement('td');
-      cell.textContent = Object.values(currentMed)[j];
+      const key = Object.keys(currentMed)[j];
+      const value = Object.values(currentMed)[j];
+      
+      if (key == )
+      cell.textContent = value;
+      
+
       console.log(cell);
       row.appendChild(cell);
     }
+
+    // Finishing off the row
     row.style.backgroundColor = currentMed.color;
     row.style.color = currentMed.font;
-    tbody.appendChild(row);
+    tbodyMeds.appendChild(row);
   }
 }
