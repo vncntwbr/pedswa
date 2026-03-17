@@ -21,7 +21,11 @@
 			"font": "#fff"
 		}
 	],
-	"equipment": [],
+	"equipment": [
+		{
+			"equ": "ETT cuffed"
+		}
+	],
 	"cpr": [],
 	"vitals": []
 }

@@ -75,7 +75,7 @@ function syncSliders(changed) {
   }
 
   updateTapeDisplay(zone.color, zone.font);
-  calculate(data, newWeight); // Auto-update doses
+  calculate(data, newWeight, zone); // Auto-update doses
 }
 
 function updateTapeDisplay(color, font) {
@@ -89,13 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Append Table
-function calculate(data2, weight){
+function calculate(data2, weight, zone){
   console.log('addRows called with data:', data2.medications);
   addRows(data2.medications, weight);
 }
 
-function addRows(dataMeds, weight) {
-  const tbodyMeds = document.querySelector("#medicationsTableBody");
+function addRows(dataMeds, weight, zone) {
+  const tbodyMeds = document.querySelector("#medsTableBody");
   tbodyMeds.innerHTML = "";
 
   // Looping over the array of all medications
@@ -118,7 +118,6 @@ function addRows(dataMeds, weight) {
     for (let j = 0; j < cellContents.length; j++) {
       const cell = document.createElement('td');
       cell.textContent = cellContents[j];
-      console.log(cell);
       row.appendChild(cell);
     }
 
