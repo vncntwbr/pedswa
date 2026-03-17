@@ -85,7 +85,7 @@ function updateTapeDisplay(color, font) {
 
 // Init on load
 document.addEventListener('DOMContentLoaded', () => {
-  syncSliders(broselow.find(z => 75 >= z.lengthMin));
+  syncSliders('length');
 });
 
 // Append Table
